@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WowOS</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noai, noimageai">
+        <link href="https://i.22291111.xyz/avatar.jpg" rel="icon" type="image/x-icon">
+    </head>
+    
+    <body>
+
+        <!--TOPBAR-->
+
+        <div class="topbar">
+            <p>WowOS</p>
+            <p id="topbar-time">Time and Date</p>
+        </div>
+
+        <!--LOGIN-->
+
+        <div class="window" id="login">
+            <div id="loginheader" class="wheader" style="display: flex; justify-content: space-between;">
+                <p>Username: Wowstar</p>
+            </div>
+            <br>
+            <div class="loginbottom" style="display: flex;">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+            </div>
+        </div>
+
+        <!--MOBILE WARNING-->
+        
+        <div class="window" id="warning" style="left: 10%; top: 20%; transform: translate(-10%, -20%);">
+            <div id="warningheader" class="wheader" style="display: flex; justify-content: space-between;">
+                <p>Warning</p>
+            </div>
+            <p>This website is made for computers and my not be fully compatible with mobile devices.</p>
+            <a onclick="warningnot()" style="color: blue; cursor: pointer;">Close</a>
+        </div>
+
+        <script src="/js/drag.js"></script>
+        <script src="/js/time.js"></script>
+        <script src="/js/login.js"></script>
+    </body>
+</html>

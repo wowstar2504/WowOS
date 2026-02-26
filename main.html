@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>WowOS</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noai, noimageai">
+        <link href="https://i.22291111.xyz/avatar.jpg" rel="icon" type="image/x-icon">
+    </head>
+
+    <body>
+
+        <!--TOPBAR-->
+
+        <div class="topbar">
+            <p>WowOS</p>
+            <p id="topbar-time">Time and Date</p>
+        </div>
+        
+        <!--APPS-->
+        <!--WELCOME-->
+        <div class="window" id="welcome">
+            <div id="welcomeheader" class="wheader" style="display: flex; justify-content: space-between;">
+                <p><img src="https://i.22291111.xyz/avatar.jpg" height="20px" width="auto"> Welcome</p>
+                <p style="cursor: pointer;" id="welcomeclose">Close</p>
+            </div>
+            <p>Welcome to WowOS!</p>
+            <a onclick="welcomenot()" style="color: blue; cursor: pointer;">Don't show again</a>
+        </div>
+
+        <!--LINKS-->
+
+        <div class="window" id="links" style="display: none;">
+            <div id="linksheader" class="wheader" style="display: flex; justify-content: space-between;">
+                <p><img src="/media/img/links.png" height="20px" width="auto"> Links</p>
+                <p style="cursor: pointer;" id="linksclose">Close</p>
+            </div>
+            <ul>
+                <li><a href="https://22291111.xyz" target="_blank">My website</a></li>
+                <li><a href="https://github.com/wowstar2504" target="_blank">My GitHub</a></li>
+            </ul>
+        </div>
+
+        <!--SETTINGS-->
+
+        <div class="window" id="settings" style="display: none;">
+            <div id="settingsheader" class="wheader" style="display: flex; justify-content: space-between;">
+                <p><img src="/media/img/settings.png" height="20px" width="auto">Settings</p>
+                <p style="cursor: pointer" id="settingsclose">Close</p>
+            </div>
+            <h2>Background image:</h2>
+            <ul>
+                <li><a onclick="body.style.backgroundImage = 'url(/media/img/background1.jpg)';">Cats</a></li>
+                <li><a onclick="body.style.backgroundImage = 'url(/media/img/background2.png)';">Test</a></li>
+            </ul>
+        </div>
+
+        <!--ABOUT ME-->
+
+        <div class="window" id="aboutme" style="display: none;">
+            <div id="aboutmeheader" class="wheader" style="display: flex; justify-content: space-between;">
+                <p><img src="/media/img/about.png" height="20px" width="auto">About ME</p>
+                <p style="cursor: pointer;" id="aboutmeclose">Close</p>
+            </div>
+            <p>Hello! I'm Wowstar and I'm a developer of this OS. I made this for <a href="https://flavortown.hackclub.com" target="_blank">Hack Club Flavortown</a>.</p>
+            <p>You can contact me through:</p>
+            <ul>
+                <li><a href="mailto:hi@22291111.xyz">Email: hi@22291111.xyz</a></li>
+                <li><a href="https://discord.com/users/297820144330080257" target="_blank">Discord: Wowstar2504</a></li>
+            </ul>
+        </div>
+
+        <!--BOTTOM-->
+
+        <div class="bottom">
+            <div class="apps">
+                <div class="app">
+                    <p style="cursor: pointer;" id="welcomeopen"><img src="https://i.22291111.xyz/avatar.jpg" height="32px" width="auto"></p>
+                    <p>Welcome</p>
+                </div>
+                <div class="app">
+                    <p style="cursor: pointer;" id="linksopen"><img src="/media/img/links.png" height="32px" width="auto"></p>
+                    <p>Links</p>
+                </div>
+                <div class="app">
+                    <p style="cursor: pointer;" id="settingsopen"><img src="/media/img/settings.png" height="32px" width="auto"></p>
+                    <p>Settings</p>
+                </div>
+                <div class="app">
+                    <p style="cursor: pointer;" id="aboutmeopen"><img src="/media/img/about.png" height="32px" width="auto"></p>
+                    <p>About ME</p>
+                </div>
+            </div>
+            <div class="system">
+                <a href="/"><img src="https://i.22291111.xyz/1772138439_8a7e39051df9.png" height="32px" width="auto"></a>
+            </div>
+        </div>
+        <script src="/js/drag.js"></script>
+        <script src="/js/time.js"></script>
+        <script src="/js/start.js"></script>
+    </body>
+</html>
