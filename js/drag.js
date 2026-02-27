@@ -1,3 +1,5 @@
+let highestZ = 10;
+
 function startDraggingSystem(winid) {
     const element = document.getElementById(winid);
     const header = document.getElementById(winid + "header");
@@ -6,12 +8,18 @@ function startDraggingSystem(winid) {
 
     if (!element) return;
 
+    function bringToFront() {
+        highestZ++;
+        element.style.zIndex = highestZ;
+    };
+
     var initialX = 0;
     var initialY = 0;
     var currentX = 0;
     var currentY = 0;
 
     function startDragging(e) {
+        bringToFront();
         e = e || window.event;
         e.preventDefault();
         initialX = e.clientX;
@@ -43,7 +51,7 @@ function startDraggingSystem(winid) {
     };
 
     if (closeBtn) closeBtn.addEventListener("click", () => element.style.display = "none");
-    if (openBtn) openBtn.addEventListener("click", () => element.style.display = "block");
+    if (openBtn) openBtn.addEventListener("click", () => {element.style.display = "block"; bringToFront();});
 };
 
 const windowIds = [

@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>WowOS</title>
+        <title>WowOS - Desktop</title>
         <link rel="stylesheet" type="text/css" href="/style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,11 +50,11 @@
                 <p><img src="/media/img/settings.png" height="20px" width="auto">Settings</p>
                 <p style="cursor: pointer" id="settingsclose">Close</p>
             </div>
-            <h2>Background image:</h2>
+            <h2>Personalization</h2>
             <ul>
-                <li><a onclick="body.style.backgroundImage = 'url(/media/img/background0.jpg)';">Space Mode</a></li>
-                <li><a onclick="body.style.backgroundImage = 'url(/media/img/background1.jpg)';">Dark Mode</a></li>
-                <li><a onclick="body.style.backgroundImage = 'url(/media/img/background2.png)';">Light Mode</a></li>
+                <li><a onclick="document.body.className='space-mode'; body.style.backgroundImage = 'url(/media/img/background0.jpg)';" class="ui-btn">Space Mode</a></li>
+                <li><a onclick="document.body.className='dark-mode'; body.style.backgroundImage = 'url(/media/img/background1.jpg)';" class="ui-btn">Dark Mode</a></li>
+                <li><a onclick="document.body.className='light-mode'; body.style.backgroundImage = 'url(/media/img/background2.jpg)';" class="ui-btn">Light Mode</a></li>
             </ul>
         </div>
 
@@ -62,11 +62,11 @@
 
         <div class="window" id="aboutme" style="display: none;">
             <div id="aboutmeheader" class="wheader" style="display: flex; justify-content: space-between;">
-                <p><img src="/media/img/about.png" height="20px" width="auto">About ME</p>
+                <p><img src="/media/img/about.png" height="20px" width="auto">About Me</p>
                 <p style="cursor: pointer;" id="aboutmeclose">Close</p>
             </div>
-            <p>Hello! I'm Wowstar and I'm a developer of this OS. I made this for <a href="https://flavortown.hackclub.com" target="_blank">Hack Club Flavortown</a>.</p>
-            <p>You can contact me through:</p>
+            <p>Hello! I'm Wowstar and I'm the developer of this OS. I made this for <a href="https://flavortown.hackclub.com" target="_blank">Hack Club Flavortown</a>.</p>
+            <p>You can contact me here:</p>
             <ul>
                 <li><a href="mailto:hi@22291111.xyz">Email: hi@22291111.xyz</a></li>
                 <li><a href="https://discord.com/users/297820144330080257" target="_blank">Discord: Wowstar2504</a></li>

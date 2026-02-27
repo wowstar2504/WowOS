@@ -7,9 +7,22 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+body.light-mode {
+  --bg-color: white;
+  --text-color: black;
+  --border-color: black;
+}
+
+:root, body.dark-mode, body.space-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --border-color: #444;
+}
+
 h1,h2,h3,h4,h5,h6,p,li {
   font-family: 'Baloo Bhai 2';
-};
+  color: var(--text-color);
+}
 
 a {
   margin-top: 10px;
@@ -26,10 +39,11 @@ body {
   background-size: cover;
   overflow-x: hidden;
   overflow-y: hidden;
+  transition: background 0.3s ease;
 }
 
 .window {
-  border: solid;
+  border: solid var(--border-color);
   min-width: 300px;
   max-width: 600px;
   height: auto;
@@ -39,7 +53,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--bg-color);
 }
 
 .wheader {
@@ -52,7 +66,8 @@ body {
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(10px);
-  border: solid;
+  border: solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   width: 100%;
 }
@@ -64,7 +79,8 @@ body {
 
 .bottom {
   backdrop-filter: blur(10px);
-  border: solid;
+  border: solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   width: 100%;
   position: fixed;
@@ -96,4 +112,37 @@ body {
   margin: 0;
   margin-right: 25px;
   text-align: center;
+}
+
+#links ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#link li a {
+  display: block;
+  padding: 10px 15px;
+  background-color: rgba(128, 128, 128, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  text-decoration: none !important;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+#links li a:hover {
+  background-color: var(--border-color);
+  color: var(--bg-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#links li a:active {
+  transform: translateY(0px);
 }
