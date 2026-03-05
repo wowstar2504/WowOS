@@ -64,6 +64,7 @@ const windowIds = [
     "aboutme",
     "notes",
     "monitor",
+    "terminal",
 ];
 
 windowIds.forEach(id => startDraggingSystem(id));

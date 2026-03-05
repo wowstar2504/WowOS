@@ -100,12 +100,26 @@
             </div>
             <div style="padding: 15px;">
                 <p>CPU Usage: <span id="cpu-load">0%</span></p>
-                <div style="width: 100%; background: #444; height: 10px; border-radius: 5px;">
-                    <div id="cpu-bar" style="width: 0%; background: #00ff00; height: 100%; border-radius: 5px; transition: width 0.5s;"></div>
-                </div>
-                <p>RAM: 1.2GB / 8GB</p>
+                <p id="ram-usage">RAM: 1.2GB / 8GB</p>
             </div>
         </div>
+        
+        <!--TERMINAL-->
+
+        <div class="window" id="terminal" style="display: none;">
+            <div id="terminalheader" class="wheader">
+                <p style="cursor: white;">>>_ Terminal</p>
+                <p style="cursor: pointer;" id="terminalclose" class="close-btn">❌</p>
+            </div>
+            <div id="terminal-body" class="terminal-body">
+                <p>WowOS Terminal v1.0.0</p>
+                <p>Type 'help' for commands.</p>
+                    <div class="terminal-line" style="display: flex; align-items: center; gap: 5px;">
+                        <span style="color: #0f0;">$></span>
+                        <input type="text" id="terminal-input" autocomplete="off">
+                    </div>
+                </div>
+            </div>
 
         <!--TASKBAR-->
 
@@ -133,6 +147,11 @@
                 </div>
                 <div class="app">
                     <p style="cursor: pointer;" id="monitoropen" class="open-btn">📊 System Monitor</p>
+                    <!-- <p>System Monitor</p> -->
+                </div>
+                <div class="app">
+                    <p style="cursor: pointer;" id="terminalopen" class="open-btn">💻 Terminal</p>
+                    <!-- <p>Terminal</p> -->
                 </div>
             </div>
             <div class="system">
