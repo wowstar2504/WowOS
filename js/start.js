@@ -92,11 +92,6 @@ if(terminalInput) {
                 res.innerText = 'Available commands: help, clear, theme, exit';
                 terminalInput.parentElement.before(res);
             }
-            /*else if (cmd === 'clear') {
-                const inputLine = terminalBody.querySelector('.terminal-input-line');
-                terminalBody.innerHTML = ''; 
-                terminalBody.appendChild(inputLine);
-            }*/
             else if(cmd === 'whoami') {
                 const res = document.createElement('p');
                 res.innerText = `Current User: ${currentUser}`;
