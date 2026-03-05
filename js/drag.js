@@ -61,7 +61,8 @@ const windowIds = [
     "welcome", 
     "links", 
     "settings", 
-    "aboutme"
+    "aboutme",
+    "notes"
 ];
 
 windowIds.forEach(id => startDraggingSystem(id));
