@@ -50,8 +50,16 @@ function startDraggingSystem(winid) {
         element.onmousedown = startDragging;
     };
 
-    if (closeBtn) closeBtn.addEventListener("click", () => element.style.display = "none");
-    if (openBtn) openBtn.addEventListener("click", () => {element.style.display = "block"; bringToFront();});
+    if (closeBtn) closeBtn.addEventListener("click", () => {
+        element.style.display = "none";
+        if (winid === 'monitor' && typeof stopMonitor === 'function') stopMonitor(); 
+    });
+    
+    if (openBtn) openBtn.addEventListener("click", () => {
+        element.style.display = "flex"; //block?
+        bringToFront();
+        if (winid === 'monitor' && typeof startMonitor === 'function') startMonitor();
+    });
 };
 
 const windowIds = [
