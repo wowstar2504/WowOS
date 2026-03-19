@@ -37,6 +37,29 @@ WowOS is a web-based desktop environment built for **[Hack Club Flavortown](http
 
 ---
 
+### Optimization
+1. Caching Strategies (HTTP & Browser)
+- Implementation: Integrated a Service Worker (``sw.js``) and utilized Web Storage API.
+- Impact: * Service Worker: Intercepts network requests to serve HTML, CSS, and JS directly from the browser's local cache. This makes "booting" WowOS nearly instant on repeat visits and enables offline functionality.
+  - Application Level: Uses ``localStorage`` to persist "Sticky Notes" and "Welcome" settings, ensuring user data is cached locally without needing a database.
+
+2. Lazy Loading
+- Implementation: Shifted from "Eager Execution" to On-Demand Logic Loading.
+- Impact: * Logic Steering: The System Monitor's background processes no longer run on startup. Instead, the logic only initializes when the user specifically opens the "System Monitor" window.
+   - Modular Architecture: Established a pattern for using `import()` to load app-specific scripts only when required, keeping the initial "OS Shell" footprint as small as possible.
+
+3. Reduced Memory Usage
+- Implementation: Established Global Scope Management and Process Termination.
+- Impact: * Interval Clearing: By calling ``window.stopMonitor()`` when the window is closed, we manually kill the `setInterval` process.
+   - Leak Prevention: This prevents "Ghost Processes" from stacking up in the browser's RAM, ensuring WowOS doesn't become laggy or crash the tab after extended use.
+
+4. Efficient Algorithms
+- Implementation: Optimized Lookups and State Management.
+- Impact: * Z-Index Management: Uses a centralized ``highestZ`` variable to handle window depth. This allows a window to be brought to the front with $O(1)$ time complexity (a single operation), rather than looping through every DOM element to find the top layer.
+   - Batch Initialization: Uses ``windowIds.forEach`` in ``drag.js`` to efficiently attach event listeners to all system components in a single pass during the boot sequence.
+
+---
+
 ### License
 - This is licensed under the MIT license which you may check [here](https://github.com/wowstar2504/WowOS/blob/main/LICENSE).
-- If you have any questions or inquiries about this project, please reach me [at hi@22291111.xyz](mailto:hi@22291111.xyz).
+- If you have any questions or inquiries about this project, please reach me at [wowstar2504@proton.me](mailto:wowstar2504@proton.me).
